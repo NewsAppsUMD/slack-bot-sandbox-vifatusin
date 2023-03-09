@@ -5,7 +5,15 @@ from slack.errors import SlackApiError
 slack_token = os.environ.get('SLACK_API_TOKEN')
 
 client = WebClient(token=slack_token)
-msg = "testing!"
+
+# code here that loads the CSV and finds a specific call
+
+student = "Victoria Stavish"
+emotion = "sad"
+
+msg = f"{student} is {emotion} about the graduating class meeting Oprah through Gayle King."
+
+
 try:
     response = client.chat_postMessage(
         channel="slack-bots",
